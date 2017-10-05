@@ -1,0 +1,47 @@
+{
+    "name": "santigarcor/laravel-vuetable",
+    "description": "Vuetable laravel backend package",
+    "keywords": ["laravel", "vuetable", "vue", "table"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Santiago Garcia",
+            "homepage": "http://santigarcor.me"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/http": "~5.5",
+        "illuminate/support": "~5.5",
+        "illuminate/database": "~5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "~3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vuetable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vuetable\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vuetable\\VuetableServiceProvider"
+            ],
+            "aliases": {
+                "Vuetable": "Vuetable\\VuetableFacade"
+            }
+        }
+    }
+}
