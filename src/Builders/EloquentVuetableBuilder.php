@@ -79,7 +79,7 @@ class EloquentVuetableBuilder
             return $this;
         }
 
-        [$field, $direction] = explode('|', $this->request->input('sort'));
+        list($field, $direction) = explode('|', $this->request->input('sort'));
 
         $this->query->orderBy($field, $direction);
 
