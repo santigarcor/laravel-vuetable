@@ -25,7 +25,7 @@ Laravel Vuetable is the backend component that can work with the [Vuetable compo
 ## Usage
 Your request to the controller should have this data:
 
-```json
+```javascript
 {
     sort: '', // column_name|asc or column_name|desc
     page: 1,
