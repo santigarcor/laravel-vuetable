@@ -1,6 +1,6 @@
 <?php
 
-namespace Vuetable\Facades;
+namespace Vuetable;
 
 use Illuminate\Support\Facades\Facade;
 
