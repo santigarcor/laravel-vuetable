@@ -30,16 +30,11 @@ class Vuetable
 //            throw new \Exception('Unsupported builder type');
 //        }
 
-        if($source instanceof \Illuminate\Database\Eloquent\Builder)
-        {
+        if ($source instanceof \Illuminate\Database\Eloquent\Builder) {
             return new EloquentVuetableBuilder($request, $source);
-        }
-        elseif($source instanceof \Illuminate\Support\Collection)
-        {
+        } elseif ($source instanceof \Illuminate\Support\Collection) {
             return new CollectionVuetableBuilder($request, $source);
-        }
-        else
-        {
+        } else {
             throw new \Exception('Unsupported builder type');
         }
     }
@@ -60,7 +55,7 @@ class Vuetable
      */
     public function collection($collection)
     {
-        return new CollectionVuetableBuilder($this->request,$collection);
+        return new CollectionVuetableBuilder($this->request, $collection);
     }
 
     public function getRequest()

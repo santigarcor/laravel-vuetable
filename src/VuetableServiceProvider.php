@@ -26,6 +26,5 @@ class VuetableServiceProvider extends ServiceProvider
         $this->app->singleton('vuetable', function () {
             return new Vuetable(app('request'));
         });
-
     }
 }

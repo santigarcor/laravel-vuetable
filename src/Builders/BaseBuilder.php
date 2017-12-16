@@ -2,7 +2,6 @@
 
 namespace Vuetable\Builders;
 
-
 abstract class BaseBuilder
 {
     /**
