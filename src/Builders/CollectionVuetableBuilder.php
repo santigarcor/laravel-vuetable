@@ -56,7 +56,7 @@ class CollectionVuetableBuilder extends BaseBuilder
             (int) $this->request->input('per_page') > 0 ? $this->request->input('per_page') : 15
         )->values();
 
-        $paginator = new LengthAwarePaginator($this->collection, $count,$perPage ?: 15);
+        $paginator = new LengthAwarePaginator($this->collection, $count, $perPage ?: 15);
 
         return $paginator;
     }
