@@ -1,4 +1,4 @@
-# Laravel Vuetable (Laravel 5.5 Package)
+# Laravel Vuetable (Laravel 5.4 Package)
 
 [![Build Status](https://travis-ci.org/santigarcor/laravel-vuetable.svg?branch=master)](https://travis-ci.org/santigarcor/laravel-vuetable)
 [![Latest Stable Version](https://poser.pugx.org/santigarcor/laravel-vuetable/v/stable)](https://packagist.org/packages/santigarcor/laravel-vuetable)
@@ -54,7 +54,7 @@ data = {
 axios.get('http://url.com/users-with-companies', data)
 ```
 
-And in the controller we should have:
+In Controller we can provide Eloquent:
 
 ```php
 class UsersDataController extends Controller
@@ -89,6 +89,32 @@ class UsersDataController extends Controller
 }
 ```
 
+Or Collection
+```php
+class UsersDataController extends Controller
+{
+    public function index() {
+
+        $query = new Collection([
+             ['name' => 'John Doe', 'email' => 'john@mail.com'],
+             ['name' => 'Jane Doe', 'email' => 'jane@mail.com'],
+             ['name' => 'Test John', 'email' => 'test@mail.com']
+        ]);
+
+        return Vuetable::of($query)
+            ->editColumn('name', function ($user) {
+                return Str::lower($user['name']);
+            })
+            ->addColumn('urls', function ($user) {
+                return [
+                    'edit' => route('users.edit', $user['id']),
+                    'delete' => route('users.destroy', $user['id']),
+                ];
+            })
+            ->make();
+    }
+}
+```
 This controller is going to return:
 ```json
 {
@@ -139,6 +165,12 @@ Using the Eloquent Builder you can:
 - Define the length of the pagination.
 - Add columns.
 - Edit columns (if the column has a cast defined, it doesn't work).
+
+Using the Collection you can:
+- Filter/Sort by model columns.
+- Define the length of the pagination.
+- Add columns.
+- Edit columns.
 
 ## License
 

@@ -5,14 +5,9 @@ namespace Vuetable\Builders;
 use Closure;
 use Illuminate\Http\Request;
 
-class EloquentVuetableBuilder
+class EloquentVuetableBuilder extends BaseBuilder
 {
-    /**
-     * The current request.
-     *
-     * @var \Illuminate\Http\Request
-     */
-    private $request;
+
 
     /**
      * Query used to make the table data.
@@ -20,20 +15,6 @@ class EloquentVuetableBuilder
      * @var \Illuminate\Database\Eloquent\Builder
      */
     private $query;
-
-    /**
-     * Array of columns that should be edited and the new content.
-     *
-     * @var array
-     */
-    private $columnsToEdit = [];
-
-    /**
-     * Array of columns that should be added and the new content.
-     *
-     * @var array
-     */
-    private $columnsToAdd = [];
 
     public function __construct(Request $request, $query)
     {
@@ -59,7 +40,7 @@ class EloquentVuetableBuilder
     /**
      * Paginate the query.
      *
-     * @return \Illuminate\Pagination\LengthAwarePaginator
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function paginate()
     {
@@ -75,7 +56,7 @@ class EloquentVuetableBuilder
      */
     public function sort()
     {
-        if (!$this->request->filled('sort')) {
+        if (!$this->request->input('sort')) {
             return $this;
         }
 
@@ -93,7 +74,7 @@ class EloquentVuetableBuilder
      */
     public function filter()
     {
-        if (!$this->request->filled(['searchable', 'filter'])) {
+        if (!$this->request->input('searchable') || !$this->request->input('filter')) {
             return $this;
         }
 
@@ -108,38 +89,11 @@ class EloquentVuetableBuilder
         return $this;
     }
 
-    /**
-     * Add a new column to edit with its new value.
-     *
-     * @param  string $column
-     * @param  string|Closure $content
-     * @return $this
-     */
-    public function editColumn($column, $content)
-    {
-        $this->columnsToEdit[$column] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Add a new column to the columns to add.
-     *
-     * @param string $column
-     * @param string|Closure $content
-     */
-    public function addColumn($column, $content)
-    {
-        $this->columnsToAdd[$column] = $content;
-
-        return $this;
-    }
 
     /**
      * Edit the results inside the pagination object.
      *
      * @param  \Illuminate\Pagination\LengthAwarePaginator $results
-     * @param  array $columnsToEdit
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
     public function applyChangesTo($results)
