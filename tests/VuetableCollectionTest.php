@@ -2,11 +2,11 @@
 
 namespace Tests\Unit;
 
-use Illuminate\Support\Collection;
-use Vuetable\Builders\CollectionVuetableBuilder;
 use Vuetable\Vuetable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Vuetable\Tests\VuetableTestCase;
+use Vuetable\Builders\CollectionVuetableBuilder;
 
 class VuetableCollectionTest extends VuetableTestCase
 {
@@ -26,7 +26,6 @@ class VuetableCollectionTest extends VuetableTestCase
                 ['name' => 'Test John', 'email' => 'test@mail.com']
             ]
         );
-
     }
 
     /** @test */
@@ -162,7 +161,6 @@ class VuetableCollectionTest extends VuetableTestCase
                 $e->getMessage()
             );
         }
-
     }
 
     public function createRequestAndReturnVuetable($requestData = [])

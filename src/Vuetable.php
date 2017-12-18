@@ -3,8 +3,8 @@
 namespace Vuetable;
 
 use Illuminate\Http\Request;
-use Vuetable\Builders\CollectionVuetableBuilder;
 use Vuetable\Builders\EloquentVuetableBuilder;
+use Vuetable\Builders\CollectionVuetableBuilder;
 
 class Vuetable
 {
@@ -26,16 +26,12 @@ class Vuetable
     {
         $request = app('request');
 
-//        if (get_class($query) != \Illuminate\Database\Eloquent\Builder::class) {
-//            throw new \Exception('Unsupported builder type');
-//        }
-
         if ($source instanceof \Illuminate\Database\Eloquent\Builder) {
             return new EloquentVuetableBuilder($request, $source);
         } elseif ($source instanceof \Illuminate\Support\Collection) {
             return new CollectionVuetableBuilder($request, $source);
         } else {
-            throw new \Exception('Unsupported builder type: '.gettype($source));
+            throw new \Exception('Unsupported builder type: ' . gettype($source));
         }
     }
 

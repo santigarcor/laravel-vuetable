@@ -2,10 +2,10 @@
 
 namespace Vuetable\Builders;
 
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class CollectionVuetableBuilder extends BaseBuilder
 {
