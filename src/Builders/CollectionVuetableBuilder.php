@@ -48,12 +48,14 @@ class CollectionVuetableBuilder extends BaseBuilder
      */
     public function paginate()
     {
-        //$currentPage = $this->request->input('current_page');
-        $perPage = $this->request->input('per_page');
+        $perPage = ($this->request->input('per_page') > 0) ? $this->request->input('per_page') : 15;
         $count = $this->collection->count();
+        $page = $this->request->input('page');
+        $offset = $perPage * ($page - 1);
+
         $this->collection = $this->collection->slice(
-            $this->request->input('page'),
-            (int) $this->request->input('per_page') > 0 ? $this->request->input('per_page') : 15
+            $offset,
+            (int) $perPage
         )->values();
 
         $paginator = new LengthAwarePaginator($this->collection, $count, $perPage ?: 15);

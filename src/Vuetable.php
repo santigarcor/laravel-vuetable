@@ -35,7 +35,7 @@ class Vuetable
         } elseif ($source instanceof \Illuminate\Support\Collection) {
             return new CollectionVuetableBuilder($request, $source);
         } else {
-            throw new \Exception('Unsupported builder type');
+            throw new \Exception('Unsupported builder type: '.gettype($source));
         }
     }
 
