@@ -8,7 +8,7 @@ use Vuetable\Tests\Models\User;
 use Illuminate\Support\Facades\DB;
 use Vuetable\Tests\VuetableTestCase;
 
-class VuetableTest extends VuetableTestCase
+class VuetableEloquentTest extends VuetableTestCase
 {
     private $query;
 
