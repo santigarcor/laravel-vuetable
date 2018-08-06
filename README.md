@@ -11,7 +11,7 @@ Laravel Vuetable is the backend component that can work with the [Vuetable compo
 ## Installation
 1. Run the composer require command from your terminal:
 
-        composer require "santigarcor/laravel-vuetable:0.0.*"
+        composer require "santigarcor/laravel-vuetable:0.1.*"
 
 2. If you have disabled the package discovery in your `config/app.php`:
     - In the providers array add:
