@@ -15,7 +15,7 @@ class VuetableCollectionTest extends VuetableTestCase
      */
     private $collection;
 
-    public function setUp()
+    protected function setUp() : void
     {
         parent::setUp();
 
