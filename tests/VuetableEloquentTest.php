@@ -12,7 +12,7 @@ class VuetableEloquentTest extends VuetableTestCase
 {
     private $query;
 
-    public function setUp()
+    protected function setUp() : void
     {
         parent::setUp();
         $this->migrate();
