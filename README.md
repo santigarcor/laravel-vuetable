@@ -1,4 +1,4 @@
-# Laravel Vuetable (Laravel 6.x/5.4 Package)
+# Laravel Vuetable (Laravel 7.x/6.x/5.4 Package)
 
 [![Build Status](https://travis-ci.org/santigarcor/laravel-vuetable.svg?branch=master)](https://travis-ci.org/santigarcor/laravel-vuetable)
 [![Latest Stable Version](https://poser.pugx.org/santigarcor/laravel-vuetable/v/stable)](https://packagist.org/packages/santigarcor/laravel-vuetable)
