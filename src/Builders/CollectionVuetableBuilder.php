@@ -96,13 +96,13 @@ class CollectionVuetableBuilder extends BaseBuilder
 
             $this->collection = $this->collection
                 ->map(function ($data) {
-                    return array_dot($data);
+                    return Arr::dot($data);
                 })
                 ->sort($comparer)
                 ->map(function ($data) {
                     foreach ($data as $key => $value) {
                         unset($data[$key]);
-                        array_set($data, $key, $value);
+                        Arr::set($data, $key, $value);
                     }
 
                     return $data;
@@ -185,7 +185,7 @@ class CollectionVuetableBuilder extends BaseBuilder
     public function addItem($item)
     {
         foreach ($this->columnsToAdd as $column => $value) {
-            if (array_has($item, $column)) {
+            if (Arr::has($item, $column)) {
                 throw new \Exception("Can not add the '{$column}' column, the results already have that column.");
             }
 
@@ -199,7 +199,7 @@ class CollectionVuetableBuilder extends BaseBuilder
     public function editItem($item)
     {
         foreach ($this->columnsToEdit as $column => $value) {
-            if (array_has($item, $column) === false) {
+            if (Arr::has($item, $column) === false) {
                 throw new \Exception("Column {$column} not exist in array");
             }
 
