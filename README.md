@@ -1,4 +1,4 @@
-# Laravel Vuetable (Laravel 7.x/6.x/5.4 Package)
+# Laravel Vuetable (Laravel 7.x/6.x/5.x Package)
 
 [![Build Status](https://travis-ci.org/santigarcor/laravel-vuetable.svg?branch=master)](https://travis-ci.org/santigarcor/laravel-vuetable)
 [![Latest Stable Version](https://poser.pugx.org/santigarcor/laravel-vuetable/v/stable)](https://packagist.org/packages/santigarcor/laravel-vuetable)
@@ -8,12 +8,19 @@
 
 Laravel Vuetable is the backend component that can work with the [Vuetable component](https://github.com/ratiw/vuetable-2).
 
+The latest release requires [PHP](https://php.net) 7.2.5-7.4 and supports Laravel 5.7, 5.8, 6.* and 7.*
+
+| Laravel Vuetable  |  L5.4            | L5.5             | L5.6             | L5.7             | L5.8             | L6               | L7               |
+|-------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|
+| < 1.0             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:x:               |:x:               |
+| \> 1.0            |:x:               |:x:               |:x:               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+
 ## Installation
 1. Run the composer require command from your terminal:
 
-        composer require "santigarcor/laravel-vuetable:0.1.*"
+        composer require "santigarcor/laravel-vuetable"
 
-2. If you have disabled the package discovery in your `config/app.php`:
+2. If you laravel version not supported the package discovery, set in your `config/app.php`:
     - In the providers array add:
 
             Vuetable\VuetableServiceProvider::class,
