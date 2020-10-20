@@ -1,4 +1,4 @@
-# Laravel Vuetable (Laravel 7.x/6.x/5.x Package)
+# Laravel Vuetable (Laravel 8.x/7.x/6.x/5.x Package)
 
 [![Build Status](https://travis-ci.org/santigarcor/laravel-vuetable.svg?branch=master)](https://travis-ci.org/santigarcor/laravel-vuetable)
 [![Latest Stable Version](https://poser.pugx.org/santigarcor/laravel-vuetable/v/stable)](https://packagist.org/packages/santigarcor/laravel-vuetable)
@@ -8,12 +8,12 @@
 
 Laravel Vuetable is the backend component that can work with the [Vuetable component](https://github.com/ratiw/vuetable-2).
 
-The latest release requires [PHP](https://php.net) 7.2.5-7.4 and supports Laravel 5.7, 5.8, 6.* and 7.*
+The latest release requires [PHP](https://php.net) 7.2.5-7.4 and supports Laravel 5.7, 5.8, 6.* ,7.* and 8.*
 
-| Laravel Vuetable  |  L5.4            | L5.5             | L5.6             | L5.7             | L5.8             | L6               | L7               |
-|-------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|
-| < 1.0             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:x:               |:x:               |
-| \> 1.0            |:x:               |:x:               |:x:               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| Laravel Vuetable  |  L5.4            | L5.5             | L5.6             | L5.7             | L5.8             | L6               | L7               | L8               |
+|-------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|
+| < 1.0             |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:x:               |:x:               |:x:               |
+| \> 1.0            |:x:               |:x:               |:x:               |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 
 ## Installation
 1. Run the composer require command from your terminal:
