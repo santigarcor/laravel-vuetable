@@ -74,7 +74,13 @@ class CollectionVuetableBuilder extends BaseBuilder
             return $this;
         }
 
-        list($field, $direction) = explode('|', $this->request->input('sort'));
+        $sort_parts = explode('|', $this->request->input('sort'));
+
+        $field = $sort_parts[0];
+
+        $direction = count($sort_parts) > 1
+            ? $sort_parts[1]
+            : $this->request->input('order', 'desc');
 
         if ($field) {
             $comparer = function ($a, $b) use ($field,$direction) {
