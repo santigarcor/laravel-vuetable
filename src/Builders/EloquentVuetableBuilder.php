@@ -59,9 +59,15 @@ class EloquentVuetableBuilder extends BaseBuilder
         if (!$this->request->input('sort')) {
             return $this;
         }
+        
+        $sort_parts = explode('|', $this->request->input('sort'));
 
-        list($field, $direction) = explode('|', $this->request->input('sort'));
+        $field = $sort_parts[0];
 
+        $direction = count($sort_parts) > 1
+            ? $sort_parts[1]
+            : $this->request->input('order', 'desc');
+        
         $this->query->orderBy($field, $direction);
 
         return $this;
