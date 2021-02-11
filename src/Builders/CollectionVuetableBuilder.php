@@ -83,7 +83,7 @@ class CollectionVuetableBuilder extends BaseBuilder
             : $this->request->input('order', 'desc');
 
         if ($field) {
-            $comparer = function ($a, $b) use ($field,$direction) {
+            $comparer = function ($a, $b) use ($field, $direction) {
                 if ($direction === 'desc') {
                     $first = $b;
                     $second = $a;
