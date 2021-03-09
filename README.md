@@ -44,6 +44,15 @@ Your request to the controller should have this data:
 }
 ```
 
+You can also specify the sorting order using the "order" attribute (required by https://mannyyang.github.io/vuetable-3/ ):
+```javascript
+{
+    sort: '', // column_name
+    order: '', // asc or desc
+}
+```
+
+
 So for example lets create the table for the users with their companies. Then in the javascript we should have:
 
 ```javascript
